@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccfkydcrjo5qu"]
+
+[ext_resource type="Texture2D" uid="uid://dabwe6ng6vuct" path="res://assets/art/capsule.png" id="1_gxilf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_be71d"]
+radius = 7.4027
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_be71d")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+position = Vector2(15, 24)
+scale = Vector2(10, 10)
+texture = ExtResource("1_gxilf")

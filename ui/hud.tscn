@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://e522rpoqbln8"]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_tc1y7"]
+[ext_resource type="Texture2D" uid="uid://d3el6c3gchcud" path="res://assets/art/Shield2.png" id="2_uslc2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_phvhc"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_pahj1"]
+font_size = 48
+font_color = Color(0.827451, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tc1y7")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 299.0
+offset_bottom = 83.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_phvhc")
+
+[node name="Lives" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 20.0
+offset_bottom = 90.0
+
+[node name="ShieldIndicator" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 260.0
+offset_top = 90.0
+offset_right = 292.0
+offset_bottom = 122.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_uslc2")
+
+[node name="IncomingWarning" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "WARNING: ADDITIONAL DEBRIS INCOMING"
+label_settings = SubResource("LabelSettings_pahj1")
+
+[node name="WarningDuration" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="WarningDuration" to="." method="_on_warning_duration_timeout"]

@@ -1,0 +1,203 @@
+[gd_scene load_steps=18 format=3 uid="uid://dbgk3oi153rir"]
+
+[ext_resource type="Script" path="res://ui/start_menu.gd" id="1_dtyqf"]
+[ext_resource type="PackedScene" uid="uid://6gykmg38qyd8" path="res://level/back_ground_star_field.tscn" id="2_4a51y"]
+[ext_resource type="PackedScene" uid="uid://dr45f7gbpe8tt" path="res://level/moon.tscn" id="3_71oyb"]
+[ext_resource type="Texture2D" uid="uid://bnk5y21nm0a7n" path="res://assets/art/explosion/4.png" id="4_u7h5u"]
+[ext_resource type="Texture2D" uid="uid://dkr68jqwffvpf" path="res://assets/art/explosion/5.png" id="5_qpufu"]
+[ext_resource type="Texture2D" uid="uid://ddar6j3wxpb7o" path="res://assets/art/explosion/6.png" id="6_vogxk"]
+[ext_resource type="Texture2D" uid="uid://8pcgei0sihh4" path="res://assets/art/explosion/7.png" id="7_lgk8a"]
+[ext_resource type="Texture2D" uid="uid://d204d4e3bil6g" path="res://assets/art/explosion/8.png" id="8_qb3ye"]
+[ext_resource type="Texture2D" uid="uid://bhpxl4idwwsns" path="res://assets/art/explosion/9.png" id="9_6uhvf"]
+[ext_resource type="Texture2D" uid="uid://dmxadtduuyfp2" path="res://assets/art/explosion/10.png" id="10_6y0ig"]
+[ext_resource type="Texture2D" uid="uid://bdmlrpb61gdhf" path="res://assets/art/explosion/11.png" id="11_4yfh8"]
+[ext_resource type="Texture2D" uid="uid://uidqfqc4aw1n" path="res://assets/art/explosion/12.png" id="12_fipyl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wh0hx"]
+font_size = 64
+
+[sub_resource type="Theme" id="Theme_c3vvf"]
+default_font_size = 32
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rxv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u7h5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qpufu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vogxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lgk8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qb3ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6uhvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6y0ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fipyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecd2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u7h5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qpufu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vogxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lgk8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qb3ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6uhvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6y0ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fipyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hk6gh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u7h5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qpufu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vogxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lgk8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qb3ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6uhvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6y0ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fipyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dtyqf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -160.0
+offset_right = 239.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lunar Languish"
+label_settings = SubResource("LabelSettings_wh0hx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c3vvf")
+text = "Start Game"
+
+[node name="BackGroundStarField" parent="." instance=ExtResource("2_4a51y")]
+
+[node name="Moon" parent="." instance=ExtResource("3_71oyb")]
+position = Vector2(1115, 180)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1041, 82)
+rotation = -0.785398
+scale = Vector2(0.25, 0.245)
+sprite_frames = SubResource("SpriteFrames_2rxv6")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1108, 281)
+rotation = 3.14159
+scale = Vector2(0.25, 0.245)
+sprite_frames = SubResource("SpriteFrames_ecd2a")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1171, 109)
+rotation = 0.785398
+scale = Vector2(0.25, 0.245)
+sprite_frames = SubResource("SpriteFrames_hk6gh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

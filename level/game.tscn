@@ -1,0 +1,146 @@
+[gd_scene load_steps=29 format=3 uid="uid://dtr2jwfb6t2pf"]
+
+[ext_resource type="Script" path="res://level/game.gd" id="1_751he"]
+[ext_resource type="PackedScene" uid="uid://b1s4sd54eoqkd" path="res://player/player.tscn" id="1_5236v"]
+[ext_resource type="PackedScene" uid="uid://e522rpoqbln8" path="res://ui/hud.tscn" id="4_axqer"]
+[ext_resource type="PackedScene" uid="uid://bo6qsg8wcw3ju" path="res://ui/game_over_screen.tscn" id="5_j81pb"]
+[ext_resource type="PackedScene" uid="uid://cd2uoxyei84op" path="res://level/player_spawn_area.tscn" id="6_lhsjm"]
+[ext_resource type="AudioStream" uid="uid://d1yo0viweabfm" path="res://assets/sound/zapsplat_multimedia_laser_weapon_fire_007_25883.mp3" id="7_v36oh"]
+[ext_resource type="AudioStream" uid="uid://ctu5act3mvdy6" path="res://assets/sound/tspt_deep_laser_blast_01_026.mp3" id="8_qat3s"]
+[ext_resource type="AudioStream" uid="uid://bpag3rw4760e8" path="res://assets/sound/sound_spark_Laser-Like_Synth_Laser_Noise_Blast_Oneshot_03.mp3" id="9_jijer"]
+[ext_resource type="AudioStream" uid="uid://bdbk3c88bxfit" path="res://assets/sound/sound_spark_Laser-Like_Synth_Laser_Noise_Blast_Oneshot_06.mp3" id="10_665ab"]
+[ext_resource type="AudioStream" uid="uid://doxfhqvo3aut1" path="res://assets/sound/leisure_video_game_retro_8bit_explosion_004.mp3" id="11_ccc1s"]
+[ext_resource type="AudioStream" uid="uid://byfkj26dg6pri" path="res://assets/sound/GameOver.wav" id="12_8q600"]
+[ext_resource type="AudioStream" uid="uid://bukf1q2ird4kh" path="res://assets/sound/shield_on_cd.mp3" id="13_66o32"]
+[ext_resource type="AudioStream" uid="uid://dly2bkwiga1ed" path="res://assets/sound/shield.mp3" id="13_jw6n8"]
+[ext_resource type="AudioStream" uid="uid://8r01i47c2om5" path="res://assets/sound/shield_off_cd.mp3" id="13_ykhps"]
+[ext_resource type="PackedScene" uid="uid://6gykmg38qyd8" path="res://level/back_ground_star_field.tscn" id="14_swxfu"]
+[ext_resource type="AudioStream" uid="uid://bc7kyhtenrtr2" path="res://assets/sound/moon_explosion.mp3" id="15_xdm14"]
+[ext_resource type="AudioStream" uid="uid://djnpog6i1xjy4" path="res://assets/sound/alarm.mp3" id="16_pww0c"]
+[ext_resource type="Texture2D" uid="uid://bnk5y21nm0a7n" path="res://assets/art/explosion/4.png" id="16_rdj3e"]
+[ext_resource type="Texture2D" uid="uid://dkr68jqwffvpf" path="res://assets/art/explosion/5.png" id="17_gqbn2"]
+[ext_resource type="Texture2D" uid="uid://ddar6j3wxpb7o" path="res://assets/art/explosion/6.png" id="18_0p4v1"]
+[ext_resource type="Texture2D" uid="uid://8pcgei0sihh4" path="res://assets/art/explosion/7.png" id="19_o101y"]
+[ext_resource type="Texture2D" uid="uid://d204d4e3bil6g" path="res://assets/art/explosion/8.png" id="20_65d6h"]
+[ext_resource type="Texture2D" uid="uid://bhpxl4idwwsns" path="res://assets/art/explosion/9.png" id="21_el2jy"]
+[ext_resource type="Texture2D" uid="uid://dmxadtduuyfp2" path="res://assets/art/explosion/10.png" id="22_f3f4c"]
+[ext_resource type="Texture2D" uid="uid://bdmlrpb61gdhf" path="res://assets/art/explosion/11.png" id="23_rby8p"]
+[ext_resource type="Texture2D" uid="uid://uidqfqc4aw1n" path="res://assets/art/explosion/12.png" id="24_owtte"]
+[ext_resource type="PackedScene" uid="uid://dr45f7gbpe8tt" path="res://level/moon.tscn" id="27_lld26"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6cq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_rdj3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gqbn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0p4v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o101y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_65d6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_el2jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f3f4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rby8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rby8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_owtte")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Game" type="Node2D"]
+position = Vector2(0, 8)
+script = ExtResource("1_751he")
+
+[node name="Lasers" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_5236v")]
+position = Vector2(640, 360)
+
+[node name="AsteroidSpawnArea" parent="Player" instance=ExtResource("6_lhsjm")]
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("4_axqer")]
+
+[node name="GameOverScreen" parent="UI" instance=ExtResource("5_j81pb")]
+visible = false
+
+[node name="PlayerSpawnPos" type="Node2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="PlayerSpawnArea" parent="PlayerSpawnPos" instance=ExtResource("6_lhsjm")]
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_v36oh")
+
+[node name="AstroidHitSoundLarge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qat3s")
+
+[node name="AstroidHitSoundMedium" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jijer")
+
+[node name="AstroidHitSoundSmall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_665ab")
+
+[node name="PlayerDeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_ccc1s")
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_8q600")
+
+[node name="ShieldSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_jw6n8")
+
+[node name="ShieldOnCdSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_66o32")
+
+[node name="ShieldOffCdSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ykhps")
+
+[node name="MoonExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_xdm14")
+
+[node name="WarningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_pww0c")
+
+[node name="BackGroundStarField" parent="." instance=ExtResource("14_swxfu")]
+
+[node name="AsteroidDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(1115, 180)
+rotation = -0.785398
+scale = Vector2(0.5, 0.49)
+sprite_frames = SubResource("SpriteFrames_d6cq6")
+frame = 9
+frame_progress = 1.0
+
+[node name="Moon" parent="." instance=ExtResource("27_lld26")]
+position = Vector2(1115, 180)
+
+[connection signal="timeout" from="AsteroidDelay" to="." method="_on_asteroid_delay_timeout"]

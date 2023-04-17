@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://6gykmg38qyd8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cb11l"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = -10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_64oxm"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -20.0
+initial_velocity_max = -20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 3.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_76qoy"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -30.0
+initial_velocity_max = -30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 5.0
+scale_max = 5.0
+
+[node name="BackGroundStarField" type="Node2D"]
+
+[node name="StarFieldBack" type="GPUParticles2D" parent="."]
+z_index = -100
+position = Vector2(1300, 360)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_cb11l")
+lifetime = 140.0
+preprocess = 140.0
+
+[node name="StarFieldMiddle" type="GPUParticles2D" parent="."]
+z_index = -95
+position = Vector2(1300, 360)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_64oxm")
+lifetime = 70.0
+preprocess = 70.0
+
+[node name="StarFieldFront" type="GPUParticles2D" parent="."]
+z_index = -90
+position = Vector2(1300, 360)
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_76qoy")
+lifetime = 45.0
+preprocess = 45.0
